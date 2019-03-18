@@ -1,0 +1,107 @@
+﻿<Window x:Class="OOP_Project.AddNameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Project"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Add Name" Height="475" Width="350" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="DimGray" 
+                   Grid.ColumnSpan="2" Grid.RowSpan="8"
+                   Height="446" VerticalAlignment="Top"/>
+        <TextBlock Text="Customer Information" 
+                   FontFamily="Impact" FontSize="24" 
+                   Foreground="White"
+                   Grid.ColumnSpan="2" Grid.Row="0"
+                   VerticalAlignment="Center" 
+                   Margin="18,14,0,10"/>
+        <Button Content="Add Name" 
+                HorizontalAlignment="Center" 
+                Grid.Row="6"
+                Grid.ColumnSpan="2"
+                VerticalAlignment="Center" 
+                Width="100" 
+                Click="Button_Click"/>
+        <Button Content="Cancel"
+                HorizontalAlignment="Center" 
+                Grid.Row="6"
+                VerticalAlignment="Top" 
+                Width="76" Grid.Column="1"
+                Margin="59,64,134,0" Grid.RowSpan="2" 
+                Click="cancelButton_Click"/>
+        <TextBox Name="txtNameFirst"  
+                 Grid.Row="1" Grid.Column="1" 
+                 VerticalContentAlignment="Center" 
+                 HorizontalAlignment="Left" 
+                 Height="40" Width="220" 
+                 Foreground="White"  
+                 materialDesign:HintAssist.Hint="First Name"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txtNameFirst_TextChanged" />
+        <TextBox Name="txtNameMiddle" 
+                 Grid.Row="2" Grid.Column="1" 
+                 VerticalContentAlignment="Center" 
+                 HorizontalAlignment="Left" 
+                 Height="40" Width="220" 
+                 Foreground="White"  
+                 materialDesign:HintAssist.Hint="Middle Name"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+        <TextBox Name="txtNameLast" 
+                 Grid.Row="3" Grid.Column="1" 
+                 VerticalContentAlignment="Center" 
+                 HorizontalAlignment="Left" 
+                 Height="40" Width="220" 
+                 Foreground="White"  
+                 materialDesign:HintAssist.Hint="Last Name"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+        <TextBox Name="txtAddress" 
+                 Grid.Row="4" Grid.Column="1"
+                 VerticalContentAlignment="Center" 
+                 HorizontalAlignment="Left" 
+                 Height="40" Width="220" 
+                 Foreground="White"  
+                 materialDesign:HintAssist.Hint="Address"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+        <TextBox Name="txtContactNumber" 
+                 Grid.Row="5" Grid.Column="1" 
+                 VerticalContentAlignment="Center" 
+                 HorizontalAlignment="Left" 
+                 Height="40" Width="220" 
+                 Foreground="White"  
+                 materialDesign:HintAssist.Hint="Contact Number"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+        <materialDesign:PackIcon Kind="Account" 
+                                 Foreground="White" 
+                                 Grid.Row="1" Grid.Column="0"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"
+                                 Height="40" Width="40"  />
+        <materialDesign:PackIcon Kind="House"
+                                 Foreground="White"
+                                 Grid.Row="4" Grid.Column="0"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"
+                                 Height="40" Width="40" Margin="18,10,17,4" />
+        <materialDesign:PackIcon Kind="Cellphone" 
+                                 Foreground="White"
+                                 Grid.Row="5" Grid.Column="0"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"
+                                 Height="40" Width="40" Margin="18,10,17,5" />
+    </Grid>
+</Window>

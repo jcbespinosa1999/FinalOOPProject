@@ -1,0 +1,259 @@
+﻿<Window x:Class="OOP_Project.LoanTransaction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Project"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="LoanTransaction" Height="600" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="58"/>
+            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="180*"/>
+            <ColumnDefinition Width="111*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="DimGray" Grid.RowSpan="12" Grid.ColumnSpan="4"/>
+        <Label Content="Transaction Information" 
+               FontFamily="Impact" FontSize="24"
+               VerticalAlignment="Center" HorizontalAlignment="Left"
+               Grid.Row="0" Grid.ColumnSpan="3" Margin="10,11,0,10"
+               />
+        <Button Content="Add Transaction" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                Width="143" 
+                RenderTransformOrigin="0.732,1.418" 
+                Click="Button_Click" 
+                Grid.Row="10" Grid.ColumnSpan="4" Margin="0,1"/>
+        <Label Content="Name:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" Height="26" 
+               FontFamily="Impact" FontSize="15"
+               Grid.Row="1" Grid.Column="1" Margin="0,4"/>
+        <Label Content="Type of Jewelry:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" FontFamily="Impact" FontSize="15"
+               Grid.Row="2" Grid.Column="1" Margin="0,4"/>
+        <Label Content="Jewelry Quality:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26"
+               FontFamily="Impact" FontSize="15"
+               Grid.Row="3" Grid.Column="1"/>
+        <ComboBox Name="cmbNameList" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Center" 
+                  Width="150" Grid.ColumnSpan="2" Height="28" 
+                  Foreground="DarkGray"
+                  Grid.Row="1" Grid.Column="2"/>
+        <Button Name="addNameButton" 
+                Content="Add Name"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center" 
+                Width="100" 
+                RenderTransformOrigin="0.732,1.418" 
+                Click="addNameButton_Click" 
+                Grid.Row="1" Grid.Column="3"/>
+        <ComboBox Name="txtJewelryType" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Center" 
+                  Width="150" 
+                  Foreground="White"
+                  Grid.Row="2" Grid.Column="2"
+                  DropDownClosed="txtJewelryType_DropDownClosed"
+                  Grid.ColumnSpan="2" Height="28" Margin="0,3">
+            <ComboBoxItem Content="Rings" 
+                          HorizontalAlignment="Left" 
+                          Width="150"
+                          Foreground="Gray"/>
+            <ComboBoxItem Content="Necklaces" 
+                          HorizontalAlignment="Left" 
+                          Width="150"
+                          Foreground="Gray"/>
+            <ComboBoxItem Content="Bracelets" 
+                          HorizontalAlignment="Left" 
+                          Width="150"
+                          Foreground="Gray"/>
+            <ComboBoxItem Content="Earrings" 
+                          HorizontalAlignment="Left" 
+                          Width="150"
+                          Foreground="Gray"/>
+        </ComboBox>
+        <ComboBox Name="cmbJewelryQuality" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Center" 
+                  Width="150" 
+                  DropDownClosed="cmbJewelryQuality_DropDownClosed" 
+                  Height="28"
+                  Grid.Row="3" Grid.Column="2"
+                  Foreground="White">
+            <ComboBoxItem Content="10k" 
+                          HorizontalAlignment="Left" 
+                          Width="150"
+                          Foreground="Gray"/>
+            <ComboBoxItem Content="18k" 
+                          HorizontalAlignment="Left" 
+                          Width="150"
+                          Foreground="Gray"/>
+            <ComboBoxItem Content="21k" 
+                          HorizontalAlignment="Left" 
+                          Width="150"
+                          Foreground="Gray"/>
+        </ComboBox>
+        <Label Content="Weight (grams):" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Grid.Row="4" Grid.Column="1"
+               Height="26" FontFamily="Impact" FontSize="15"
+               Margin="0,4"/>
+        <TextBox Name="txtbWeight" 
+                 HorizontalAlignment="Left" 
+                 Height="28" 
+                 TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Center" 
+                 Width="150" 
+                 TextChanged="WeightTextBox_TextChanged"
+                 Grid.Row="4" Grid.Column="2" Margin="0,3"
+                 Foreground="White"/>
+        <Label Content="Discount (%):" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center"  
+               FontFamily="Impact" FontSize="15" Height="26"
+               Grid.Row="5" Grid.Column="1" Margin="0,4"/>
+        <TextBox Name="txtbDiscount" 
+                 HorizontalAlignment="Left" 
+                 Height="30" Width="150"
+                 TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Center"  
+                 TextChanged="txtDiscount_TextChanged" 
+                 Grid.Row="5" Grid.Column="2"
+                 Foreground="White"/>
+        <Label Content="Details:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" FontFamily="Impact" FontSize="15"
+               Grid.Row="9" Grid.Column="1"/>
+        <Label Content="Jewelry Value:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               FontFamily="Impact" FontSize="15"
+               Grid.Row="6" Grid.Column="1"/>
+        <TextBlock Name="actualValueText" 
+                   HorizontalAlignment="Left" 
+                   Foreground="White"  
+                   TextWrapping="Wrap" Text="0" 
+                   VerticalAlignment="Center" 
+                   Height="16"
+                   Grid.Row="6" Grid.Column="2"/>
+        <TextBox Name="txtbDetails"
+                 HorizontalAlignment="Left" 
+                 Height="60" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Center" Width="150" 
+                 Grid.Row="9" Grid.Column="2" Margin="0,10"
+                 Foreground="White"/>
+        <Label Content="Amount Loan:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" FontFamily="Impact" FontSize="15"
+               Grid.Row="7" Grid.Column="1" Margin="0,4"/>
+        <DatePicker Name="txtDate" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Width="150"  
+                    Height="26"
+                    Grid.Row="8" Grid.Column="2"
+                    Foreground="White"/>
+        <Label Content="Date of Transaction:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" 
+               Grid.Row="8" Grid.Column="1" Margin="0,4" FontFamily="Impact" FontSize="15"/>
+        <TextBox Name="txtbAmountLoaned" 
+                 HorizontalAlignment="Left" 
+                 Height="30" 
+                 TextWrapping="Wrap" Text="" 
+                 VerticalAlignment="Center" 
+                 Width="150" 
+                 TextChanged="txtDiscount_TextChanged" 
+                 Grid.Row="7" Grid.Column="2"
+                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="AccountMultiplePlus" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="1"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="Ring" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="2"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="StarFourPointsOutline" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="3"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="Weight" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="4"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="Percent" Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="5"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="Scale" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="6"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="CalendarMultiselect" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="8"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="CashMultiple" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="7"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="NotesOutline" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="9"
+                                 Foreground="White"/>
+        <Button Content="Cancel"
+                HorizontalAlignment="Center" 
+                Grid.Row="10"
+                VerticalAlignment="Top" 
+                Width="76" 
+                Click="cancelButton_Click" Grid.Column="2" 
+                Margin="6,59,98,0" Grid.RowSpan="2"/>
+    </Grid>
+</Window>

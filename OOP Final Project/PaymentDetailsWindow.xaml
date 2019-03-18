@@ -1,0 +1,223 @@
+﻿<Window x:Class="OOP_Project.PaymentDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Project"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="PaymentDetailsWindow" Height="750" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="58"/>
+            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="180*"/>
+            <ColumnDefinition Width="111*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="DimGray" Grid.ColumnSpan="4" Grid.RowSpan="13"/>
+        <Label Content="Payment Information" 
+               FontFamily="Impact" FontSize="24"
+               VerticalAlignment="Center" HorizontalAlignment="Left"
+               Grid.Row="0" Grid.ColumnSpan="3" Margin="10,11,0,10"
+               />
+        <Button Content="Cancel"
+                HorizontalAlignment="Center" 
+                Grid.Row="11"
+                VerticalAlignment="Top" 
+                Width="76" 
+                Click="cancelButton_Click" Grid.Column="2" Margin="6,61,98,0" Grid.RowSpan="2" />
+        <Label Content="Name:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" Height="26" 
+               FontFamily="Impact" FontSize="15"
+               Grid.Row="1" Grid.Column="1" Margin="0,4"/>
+        <TextBlock Name="paymentName" 
+                   HorizontalAlignment="Left" 
+                   Foreground="White" Text="lorem ipsum"  
+                   Grid.Row="1" Grid.Column="2"
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Center"/>
+        <Label Content="Type of Jewelry:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" FontFamily="Impact" FontSize="15"
+               Grid.Row="2" Grid.Column="1" Margin="0,4"/>
+        <TextBlock Name="paymentJewelry"
+                   HorizontalAlignment="Left" 
+                   Foreground="White" Text="lorem ipsum"  
+                   Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" 
+                   VerticalAlignment="Center"/>
+        <Label Content="Jewelry Quality:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26"
+               FontFamily="Impact" FontSize="15"
+               Grid.Row="3" Grid.Column="1"/>
+        <TextBlock Name="paymentCarat" 
+                   HorizontalAlignment="Left" 
+                   Foreground="White" 
+                   Text="lorem ipsum"  
+                   Grid.Row="3" Grid.Column="2"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"/>
+        <Label Content="Weight (grams):" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Grid.Row="4" Grid.Column="1"
+               Height="26" FontFamily="Impact" FontSize="15"
+               Margin="0,4"/>
+        <TextBlock Name="paymentWeight" 
+                   HorizontalAlignment="Left" 
+                   Foreground="White" Text="lorem ipsum"  
+                   Grid.Row="4" Grid.Column="2" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Center"/>
+        <Label Content="Discount (%):" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center"  
+               FontFamily="Impact" FontSize="15" Height="26"
+               Grid.Row="5" Grid.Column="1" Margin="0,4"/>
+        <TextBlock Name="paymentDisount" 
+                   HorizontalAlignment="Left"
+                   Foreground="White" 
+                   Text="lorem ipsum"
+                   Grid.Row="5" Grid.Column="2" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Center"/>
+        <Label Content="Jewelry Value:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               FontFamily="Impact" FontSize="15"
+               Grid.Row="6" Grid.Column="1"/>
+        <TextBlock Name="paymentActualValue" 
+                   HorizontalAlignment="Left"
+                   Foreground="White" 
+                   Grid.Row="6" Grid.Column="2"
+                   TextWrapping="Wrap" Text="0" 
+                   VerticalAlignment="Center"/>
+        <Label Content="Balance:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" FontFamily="Impact" FontSize="15"
+               Grid.Row="7" Grid.Column="1" Margin="0,4"/>
+        <TextBlock Name="paymentBalance" 
+                   HorizontalAlignment="Left" 
+                   Foreground="White" Text="lorem ipsum"  
+                   Grid.Row="7" Grid.Column="2" TextWrapping="Wrap"
+                   VerticalAlignment="Center"/>
+        <Label Content="Date of Transaction:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" 
+               Grid.Row="8" Grid.Column="1" Margin="0,4" FontFamily="Impact" FontSize="15"/>
+        <TextBlock Name="paymentDate" 
+                   HorizontalAlignment="Left"
+                   Foreground="White" Text="lorem ipsum"  
+                   Grid.Row="8" Grid.Column="2" TextWrapping="Wrap" 
+                   VerticalAlignment="Center"/>
+        <TextBlock Name="paymentDetails" 
+                   HorizontalAlignment="Left"
+                   Foreground="White" Text="lorem ipsum"  
+                   Grid.Row="9" Grid.Column="2" TextWrapping="Wrap" 
+                   VerticalAlignment="Center"/>
+        <TextBox Name="txtPayment" 
+                 Width="150" VerticalAlignment="Center"
+                 HorizontalAlignment="Left" 
+                 TextWrapping="Wrap" 
+                 Grid.Row="10" Grid.Column="2"
+                 Foreground="White"/>
+        <Button Name="paymentButton" 
+                Content="Pay" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                Width="143" 
+                RenderTransformOrigin="0.732,1.418"  
+                Grid.Row="11" Grid.ColumnSpan="4"
+                Click="paymentButton_Click"/>
+        <Label Content="Details:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" FontFamily="Impact" FontSize="15"
+               Grid.Row="9" Grid.Column="1"/>
+        <Label Content="Payment:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center" 
+               Height="26" FontFamily="Impact" FontSize="15"
+               Grid.Row="10" Grid.Column="1"/>
+        <materialDesign:PackIcon Kind="AccountMultiplePlus" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="1"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="Ring" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="2"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="StarFourPointsOutline" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="3"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="Weight" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="4"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="Percent" Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="5"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="Scale" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="6"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="CalendarMultiselect" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="8"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="CashMultiple" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="7"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="NotesOutline" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="9"
+                                 Foreground="White"/>
+        <materialDesign:PackIcon Kind="BankTransferIn" 
+                                 Height="30" Width="30" 
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center"
+                                 Grid.Column="0" Grid.Row="10"
+                                 Foreground="White"/>
+    </Grid>
+</Window>
